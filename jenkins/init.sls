@@ -44,3 +44,10 @@ jenkins:
     - enable: True
     - watch:
       - pkg: jenkins
+
+{% if grains['os_family'] == 'RedHat' %}
+java:
+  pkg.installed:
+    - require_in:
+      - service: jenkins
+{% endif %}
