@@ -46,7 +46,7 @@ jenkins:
       - pkg: jenkins
 
 {% if grains['os_family'] == 'RedHat' %}
-java:
+java-1.7.0-openjdk:
   pkg.installed:
     - require_in:
       - service: jenkins
