@@ -3,7 +3,7 @@
 include:
   - jenkins
 
-{% for pluginName in ['greenballs'] %}
+{% for pluginName in ['greenballs', 'active-directory'] %}
 
 jenkins.plugin.{{ pluginName }}:
   cmd.run:
