@@ -10,6 +10,5 @@ jenkins.plugin.{{ pluginName }}:
       - module: jenkins-restart
     - require:
       - pkg: jenkins
-      - cmd: update.jenkins.update.centre
 
 {% endfor %}
