@@ -7,7 +7,7 @@ include:
 
 jenkins.plugin.{{ pluginName }}:
   cmd.run:
-    - name: "java -jar {{ home }}/jenkins-cli.jar -s http://localhost:8080 install-plugin {{ pluginName }} -restart && sleep 15"
+    - name: "java -jar {{ home }}/jenkins-cli.jar -s http://localhost:8080 install-plugin {{ pluginName }} -restart && sleep 25"
     - require:
       - pkg: jenkins
       - service: jenkins
