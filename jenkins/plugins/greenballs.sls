@@ -22,4 +22,4 @@ jenkins.plugin.{{ pluginName }}:
       - pkg: jenkins
       - cmd: update.jenkins.update.centre
 
-
+{% endfor %}
