@@ -45,6 +45,14 @@ jenkins:
     - watch:
       - pkg: jenkins
 
+jenkins-restart:
+  module:
+    - wait
+    - name: service.restart
+    - m_name: jenkins
+    - require:
+      - pkg: jenkins
+
 {% if grains['os_family'] == 'RedHat' %}
 java-1.7.0-openjdk:
   pkg.installed:
