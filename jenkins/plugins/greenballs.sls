@@ -11,12 +11,14 @@ update.jenkins.update.centre:
 curl:
   - pkg.installed
 
-jenkins.plugins.greenballs:
+{% for pluginName in ['greenballs'] %}
+
+jenkins.plugin.{{ pluginName }}:
   cmd.run:
-    - name: "java -jar {{ home }}/jenkins-cli.jar -s http://localhost:8080 install-plugin greenballs"
+    - name: "java -jar {{ home }}/jenkins-cli.jar -s http://localhost:8080 install-plugin {{ pluginName }}"
     - watch_in:
       - module: jenkins-restart
-    require:
+    - require:
       - pkg: jenkins
       - cmd: update.jenkins.update.centre
 
