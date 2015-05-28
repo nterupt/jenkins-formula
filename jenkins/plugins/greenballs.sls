@@ -13,7 +13,7 @@ curl:
 
 jenkins.plugins.greenballs:
   cmd.run:
-    - name: java -jar {{ home }}/jenkins-cli.jar -s http://localhost:8080 install-plugin greenballs
+    - name: "java -jar {{ home }}/jenkins-cli.jar -s http://localhost:8080 install-plugin greenballs"
     - watch_in:
       - module: jenkins-restart
     require:
