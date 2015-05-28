@@ -9,7 +9,8 @@ update.jenkins.update.centre:
       - service: jenkins
 
 curl:
-  - pkg.installed
+  pkg:
+    - installed
 
 {% for pluginName in ['greenballs'] %}
 
